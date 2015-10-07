@@ -1,4 +1,4 @@
-(defproject clojure-msgpack "1.1.1"
+(defproject clojure-msgpack "1.1.1-enc-hotfix"
   :description "A lightweight Clojure implementation of the MessagePack spec."
   :url "https://github.com/edma2/clojure-msgpack"
   :license {:name "The MIT License (MIT)"
@@ -7,4 +7,8 @@
                  [org.clojure/test.check "0.7.0"]]
   :global-vars {*warn-on-reflection* true}
   :scm {:name "git"
-        :url "https://github.com/edma2/clojure-msgpack"})
+        :url "https://github.com/edma2/clojure-msgpack"}
+  :profiles
+  {:non-utf8-encoding
+   {:jvm-opts
+    ["-Dfile.encoding=ISO-8859-1"]}})
